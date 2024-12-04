@@ -1,0 +1,61 @@
+plugins {
+    id "com.android.apllication"
+    id "kotlin-android"
+    id "dev.flutter.flutter-grade-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versioncode')
+if(flutterVersionCode == null) {
+    flutterVersionCode = '1'
+} 
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null){
+    flutterVersionName = '1.0'
+}
+
+android{
+    compileSdkVersion 34
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+
+        applicationId "com.biografiapp.app"
+        minSdkVersion 21
+        targetSdkVersion flutter.targetSdkVersion
+        multiDexEnabled true
+        versioncode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    buildTypes {
+        release {
+
+            
+            sigingConfig signingCofigs.debug
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+defendencies {
+    implementation "androidx.multidex:multidex:2.0.1"
+}
