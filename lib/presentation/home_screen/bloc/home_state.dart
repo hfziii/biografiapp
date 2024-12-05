@@ -1,5 +1,6 @@
 part of 'home_bloc.dart';
 
+// ignore: must_be_immutable
 class HomeState extends Equatable {
   HomeState({this.homeModelObj});
 

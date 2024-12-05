@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:equatable/equatable.dart';
 import 'package:biografi/core/app_export.dart';
@@ -12,7 +14,7 @@ part 'home_state.dart';
 
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc(Homestate initialstate) : super(initialstate) {
+  HomeBloc(HomeState initialstate) : super(initialstate) {
     on<HomeInitialEvent>(_onInitialize);
   }
 
@@ -22,12 +24,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(
       state.copywith(
-        homeModelobj: state.homeModelobj?.copywith(
+        homeModelObj: state.homeModelObj?.copyWith(
           listdescriptionItemList: fillListdescriptionItemList(),
           listpriceItemList: fillListpriceItemList(),
           listfrontendItemList: fillListfrontendItemList(),
-          listgridoneItemList: fillListgridoneItemList(),
-          listdigitalItemList: fillListdigitalItemList(),
+          listgridOneItemList: filllistgridoneItemList(),
+          listdigitalItemList: filllistdigitalItemList(),
         ),
       ),
     );
@@ -67,15 +69,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     ];
   }
 
-  List<ListgridoneItemModel> filllistgridoneItemList() {
+  List<ListgridOneItemModel> filllistgridoneItemList() {
     return [
-      ListgridoneItemModel(
+      ListgridOneItemModel(
           description:
               "Head of Web Division\r\nPPK Ormawa Unpak\r\nJune - October 2024"),
-      ListgridoneItemModel(
+      ListgridOneItemModel(
           description:
               "Head of Publication Division\r\nCampus Expo \rPersada In Diversity\r\nFebruary 2823"),
-      ListgridoneItemModel(
+      ListgridOneItemModel(
           description: "Event Division\r\nRaimuna Nasional XII\r\nAugust 2023")
     ];
   }

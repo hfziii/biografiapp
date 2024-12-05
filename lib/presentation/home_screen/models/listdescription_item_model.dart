@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
 
 /// This class is used in the listdescription_item_widget screen.
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must-be-immutable
+// ignore: must_be_immutable
 class ListdescriptionItemModel extends Equatable {
   ListdescriptionItemModel({this.description, this.id}) {
     description = description ??
@@ -12,7 +13,7 @@ class ListdescriptionItemModel extends Equatable {
   String? description;
   String? id;
 
-  ListdescriptionItemModel copywith({
+  ListdescriptionItemModel copyWith({
     String? description,
     String? id,
   }) {
@@ -23,5 +24,5 @@ class ListdescriptionItemModel extends Equatable {
   }
 
   @override
-  List<Object> get props => [description, id];
+  List<Object?> get props => [description, id];
 }

@@ -5,6 +5,7 @@ import 'listfrontend_item_model.dart';
 import 'listgrid_one_item_model.dart';
 import 'listprice_item_model.dart';
 
+// ignore: must_be_immutable
 class HomeModel extends Equatable {
   HomeModel(
       {this.listdescriptionItemList = const [],
