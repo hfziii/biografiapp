@@ -1,6 +1,6 @@
 # Aplikasi Biografi Muhamad Hafizi
 
-Tugas Individu Mata Kuliah Mobile Programming
+### Tugas Individu Mata Kuliah Mobile Programming
 ### Nama : Muhamad Hafizi 
 ### NPM : 065122214
 ### Kelas : Gabungan B
