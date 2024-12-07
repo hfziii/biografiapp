@@ -7,7 +7,7 @@ ThemeData get theme => ThemeHelper().themeData();
 /// Helper class for managing themes and colors.
 class ThemeHelper {
   /// The current app theme
-  var _appTheme = PrefUtils().getThemeData();
+  var _appTheme = Prefutils().getThemeData();
 
   /// A map of custom color themes supported by the app
   Map<String, LightCodeColors> _supportedCustomColor = {

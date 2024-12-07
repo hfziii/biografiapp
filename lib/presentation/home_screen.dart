@@ -1,11 +1,11 @@
 // ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import '../core/app_export.dart';
-import '../theme/';
-import '../widgets/';
-import '../widgets/';
-import '../widgets/';
-import '../widgets/';
+import '../theme/custom_button_style.dart';
+import '../widgets/app_bar/appbar_leading_image.dart';
+import '../widgets/app_bar/appbar_trailling_image.dart';
+import '../widgets/app_bar/custom_app_bar.dart';
+import '../widgets/custom_elevated_button.dart';
 import '../presentation/home_screen/bloc/home_bloc.dart';
 import '../presentation/home_screen/models/home_model.dart';
 import '../presentation/home_screen/models/listdescription_item_model.dart';
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: theme.colorscheme.secondaryContainer,
+        backgroundColor: theme.colorScheme.secondaryContainer,
         body: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(
@@ -71,27 +71,26 @@ class HomeScreen extends StatelessWidget {
                                 width: 288.h,
                                 text: "lbl_muhamad_hafizi".tr,
                                 margin: EdgeInsets.only(top: 230.h),
-                                righticon: Container(),
-                                margin: EdgeInsets.only(left: 10.h),
-                                child: CustomImageView(
-                                  imagePath: ImageConstant.imgEdit,
-                                  height: 28.h,
-                                  width: 28.h,
-                                  fit: BoxFit.contain,
-                                  alignment: Alignment.topCenter,
+                                rightIcon: Container(
+                                  margin: EdgeInsets.only(left: 10.h),
+                                  child: CustomImageView(
+                                    imagePath: ImageConstant.imgEdit,
+                                    height: 28.h,
+                                    width: 28.h,
+                                    fit: BoxFit.contain,
+                                    alignment: Alignment.topCenter,
+                                  ),
                                 ),
                               ),
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [_buildAchievementsSection(context)],
+                              )
                             ],
                           ),
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            _buildAchievementsSection(context),
-                            SizedBox(height: 20.h),
-                            _buildCertificationsSection(context),
-                          ],
-                        ),
+                        SizedBox(height: 20.h),
+                        _buildCertificationsSection(context)
                       ],
                     ),
                   ),
@@ -112,7 +111,7 @@ class HomeScreen extends StatelessWidget {
         width: double.maxFinite,
         padding: EdgeInsets.symmetric(vertical: 24.h),
         decoration: BoxDecoration(
-          color: appTheme.cyan00bc,
+          color: appTheme.cyan900,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -124,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                 margin: EdgeInsets.only(left: 16.h),
               ),
               actions: [
-                AppbarTrailingImage(
+                AppbarTraillingImage(
                   imagePath: ImageConstant.imgMenu,
                   height: 18.h,
                   margin: EdgeInsets.only(right: 17.h),
@@ -159,9 +158,10 @@ class HomeScreen extends StatelessWidget {
       width: double.maxFinite,
       margin: EdgeInsets.only(bottom: 136.h),
       padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 42.h),
-      decoration: BoxDecoration(),
-      color: theme.colorScheme.secondaryContainer,
-      borderRadius: BorderRadiusStyle.roundedBorder50,
+      decoration: BoxDecoration(
+        color: theme.colorScheme.secondaryContainer,
+        borderRadius: BorderRadiusStyle.roundedBorder58,
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,9 +170,10 @@ class HomeScreen extends StatelessWidget {
           Container(
             width: double.maxFinite,
             padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 6.h),
-            decoration: BoxDecoration(),
-            color: appTheme.blue300,
-            borderRadius: BorderRadiusStyle.roundedBorder10,
+            decoration: BoxDecoration(
+              color: appTheme.blue300,
+              borderRadius: BorderRadiusStyle.roundedBorder18,
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -180,9 +181,9 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 4.h),
                 SizedBox(
                   width: double.maxFinite,
-                  child: buildContactInfoEmail(
+                  child: _buildContactInfoEmail(
                     context,
-                    lockThree: ImageConstant.imgLock,
+                    lockThree: ImageConstant.imgContact,
                     email: "lbl_085157181162".tr,
                   ),
                 ),
@@ -191,25 +192,25 @@ class HomeScreen extends StatelessWidget {
                   width: double.maxFinite,
                   child: _buildContactInfoEmail(
                     context,
-                    lockThree: ImageConstant.imgLockSecondaryContainer,
+                    lockThree: ImageConstant.imgEmail,
                     email: "msg_muhamad_hafizi372_gmail_com".tr,
                   ),
                 ),
                 SizedBox(height: 16.h),
                 SizedBox(
                   width: double.maxFinite,
-                  child: buildContactInfoEmail(
+                  child: _buildContactInfoEmail(
                     context,
-                    lockThree: ImageConstant.imgLinkedin,
+                    lockThree: ImageConstant.imgLoc,
                     email: "msg_bogor_jawa_barat".tr,
                   ),
                 ),
                 SizedBox(height: 12.h),
                 SizedBox(
                   width: double.maxFinite,
-                  child: buildContactInfoEmail(
+                  child: _buildContactInfoEmail(
                     context,
-                    lockThree: ImageConstant.imgMdiGithub,
+                    lockThree: ImageConstant.imgGithub,
                     email: "msg_github_com_hfziii".tr,
                   ),
                 ),
@@ -218,16 +219,16 @@ class HomeScreen extends StatelessWidget {
                   width: double.maxFinite,
                   child: _buildContactInfoEmail(
                     context,
-                    lockThree: ImageConstant.imgLink,
+                    lockThree: ImageConstant.imgLinkedin,
                     email: "msg_linkedin_con_in_muhamadhafizi".tr,
                   ),
                 ),
                 SizedBox(height: 18.h),
                 SizedBox(
                   width: double.maxFinite,
-                  child: buildContactInfoEmail(
+                  child: _buildContactInfoEmail(
                     context,
-                    lockThree: ImageConstant.imgInfo,
+                    lockThree: ImageConstant.imgIg,
                     email: "lbl_mhfzyyy".tr,
                   ),
                 ),
@@ -257,10 +258,12 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(height: 8.h),
                       Container(
                         width: double.maxFinite,
-                        padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 6.h),
-                        decoration: BoxDecoration(),
-                        color: appTheme.blue300,
-                        borderRadius: BorderRadiusStyle.roundedBorder18,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 18.h, vertical: 6.h),
+                        decoration: BoxDecoration(
+                          color: appTheme.blue300,
+                          borderRadius: BorderRadiusStyle.roundedBorder18,
+                        ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -268,7 +271,8 @@ class HomeScreen extends StatelessWidget {
                             SizedBox(height: 4.h),
                             Padding(
                               padding: EdgeInsets.only(right: 52.h),
-                              child: BlocSelector<HomeBloc, HomeState, HomeModel?>(
+                              child:
+                                  BlocSelector<HomeBloc, HomeState, HomeModel?>(
                                 selector: (state) => state.homeModelObj,
                                 builder: (context, homeModelObj) {
                                   return ListView.separated(
@@ -278,10 +282,14 @@ class HomeScreen extends StatelessWidget {
                                     separatorBuilder: (context, index) {
                                       return SizedBox();
                                     },
-                                    itemCount: homeModelObj?.listdescriptionItemList.length ?? 0,
+                                    itemCount: homeModelObj
+                                            ?.listdescriptionItemList.length ??
+                                        0,
                                     itemBuilder: (context, index) {
                                       ListdescriptionItemModel model =
-                                          homeModelObj?.listdescriptionItemList[index] ?? ListdescriptionItemModel();
+                                          homeModelObj?.listdescriptionItemList[
+                                                  index] ??
+                                              ListdescriptionItemModel();
                                       return ListdescriptionItemWidget(model);
                                     },
                                   );
@@ -332,10 +340,13 @@ class HomeScreen extends StatelessWidget {
                                   separatorBuilder: (context, index) {
                                     return SizedBox();
                                   },
-                                  itemCount: homeModelObj?.listgridOneItemList.length ?? 0,
+                                  itemCount: homeModelObj
+                                          ?.listgridOneItemList.length ??
+                                      0,
                                   itemBuilder: (context, index) {
-                                    ListgridOneItemModel model =
-                                        homeModelObj?.listgridOneItemList[index] ?? ListgridOneItemModel();
+                                    ListgridOneItemModel model = homeModelObj
+                                            ?.listgridOneItemList[index] ??
+                                        ListgridOneItemModel();
                                     return ListgridOneItemWidget(model);
                                   },
                                 );
@@ -391,7 +402,8 @@ class HomeScreen extends StatelessWidget {
           itemCount: homeModelObj?.listfrontendItemList.length ?? 0,
           itemBuilder: (context, index) {
             ListfrontendItemModel model =
-                homeModelObj?.listfrontendItemList[index] ?? ListfrontendItemModel();
+                homeModelObj?.listfrontendItemList[index] ??
+                    ListfrontendItemModel();
             return ListfrontendItemWidget(model);
           },
         );
@@ -399,44 +411,34 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildContactInfoEmail(BuildContext context,
-      {required String lockThree, required String email}) {
-    return SizedBox(
-      width: double.maxFinite,
-      child: Row(
-        children: [
-          CustomImageView(
-            imagePath: lockThree,
-            height: 24.h,
-            width: 24.h,
-            fit: BoxFit.contain,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 8.h),
+  Widget _buildContactInfoEmail(
+    BuildContext context, {
+    required String lockThree,
+    required String email,
+  }) {
+    return Row(
+      children: [
+        CustomImageView(
+          imagePath: lockThree,
+          height: 30.h,
+          width: 30.h,
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: 16.h,
+              bottom: 4.h,
+            ),
             child: Text(
               email,
-              style: theme.textTheme.bodyMedium,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: theme.colorScheme.secondaryContainer,
+              ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class HomeInitialPageState extends StatelessWidget {
-  final HomeScreen homeScreen;
-  const HomeInitialPageState({Key? key, required this.homeScreen}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocListener<HomeBloc, HomeState>(
-      listener: (context, state) {
-        if (state is HomeInitialState) {
-          homeScreen.builder(context);
-        }
-      },
-      child: homeScreen.builder(context),
+        )
+      ],
     );
   }
 }

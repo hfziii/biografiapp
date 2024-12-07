@@ -1,17 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:biografi/main.dart';
 
 abstract class NetworkInfoI {
   Future<bool> isConnected();
-
-  Future<List<ConnectivityResult>> get connectivityResult;
-
-  Stream<List<ConnectivityResult>> get onConnetivityChanged;
+  Future<ConnectivityResult> get connectivityResult;
+  Stream<ConnectivityResult> get onConnectivityChanged;
 }
 
 class NetworkInfo implements NetworkInfoI {
-  Connetivity connetivity;
+  final Connectivity connectivity;
 
   static final NetworkInfo _networkInfo = NetworkInfo._internal(Connectivity());
 
@@ -19,50 +15,21 @@ class NetworkInfo implements NetworkInfoI {
     return _networkInfo;
   }
 
-  NetworkInfo._internal(this.connectivity) {
-    connectivity = this.connectivity;
-  }
+  NetworkInfo._internal(this.connectivity);
 
   @override
   Future<bool> isConnected() async {
-    final result = await connectivityResult;
-    return !result.contains(connectivityResult.none);
+    final result = await connectivity.checkConnectivity();
+    return result != ConnectivityResult.none;
   }
 
   @override
-  Future<List<connectivityResult>> get onConnectivityChanged =>
-      connectivity.onConnectivityChanged;
-}
-
-absract class Failure {}
-
-//
-class ServerFailure extends Failure {}
-
-class CacheFailure extends Failure {}
-
-class NetworkFailure extends Failure {}
-
-class ServerException implements Exception {}
-
-class CacheException implements Exception {}
-
-class NetworkException implements Exception {}
-
-//
-class NoInternetException implements Exception {
-  late String _message;
-
-  NoInternetException([String message = 'NoInternetExceptin Occurred']) {
-    if (globalMesenggerKey.curentSate != null) {
-      globalMessengerKey.cureentState!
-          .showSnackBar(SnackBar(content: Text(message)));
-    }
-    this._message = message;
+  Future<ConnectivityResult> get connectivityResult async {
+    return await connectivity.checkConnectivity();
   }
 
   @override
-  String toString(){
-    return _message;
+  Stream<ConnectivityResult> get onConnectivityChanged {
+    return connectivity.onConnectivityChanged;
   }
 }

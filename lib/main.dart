@@ -21,13 +21,14 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return BlocProvider(
           create: (context) => ThemeBloc(
-            ThemeType: PrefUtils().getThemeData(),
+            ThemeState( themeType: Prefutils().getThemeData(),
+            ), ThemeType: null,
           ),
           child: BlocBuilder<ThemeBloc, ThemeState>(
-            builder: (context, theme) {
+            builder: (context, state) {
               return MaterialApp(
-                title: 'biografi',
                 theme: theme,
+                title: 'biografi',
                 builder: (context, child) {
                   return MediaQuery(
                     data: MediaQuery.of(context).copyWith(
@@ -36,10 +37,10 @@ class MyApp extends StatelessWidget {
                     child: child!,
                   );
                 },
-                navigatorKey: NavigatorService.navigatorKey,
+                navigatorKey: NavigatorService.navigatorkey,
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: [
-                  AppLocalizationsDelegate(),
+                  ApplicationLocalizationDelegate(),
                   GlobalMaterialLocalizations.delegate,
                   GlobalWidgetsLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate

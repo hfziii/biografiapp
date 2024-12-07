@@ -11,5 +11,5 @@ export 'package:biografi/routes/app_routes.dart';
 export 'package:biografi/theme/app_decoration.dart';
 export 'package:biografi/theme/custom_text_style.dart';
 export 'package:biografi/theme/theme_helper.dart';
-export 'package:biografi/widgets/';
+export 'package:biografi/widgets/custom_image_view.dart';
 export 'package:biografi/theme/bloc/theme_bloc.dart';

@@ -15,7 +15,7 @@ class ListpriceItemWidget extends StatelessWidget {
       child: Text(
         listpriceItemModel0bj.price!,
         overflow: TextOverflow.ellipsis,
-        style: CustomTextStyles.bodySmall,
+        style: CustomTextStyles.bodySmall18,
       ),
     );
   }

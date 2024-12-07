@@ -4,7 +4,7 @@ import '../core/app_export.dart';
 class AppDecoration {
   // Color decorations
   static BoxDecoration get color4 => BoxDecoration(
-    color: theme.colorscheme.secondaryContainer,
+    color: theme.colorScheme.secondaryContainer,
   );
 
   // Fill decorations
@@ -13,7 +13,7 @@ class AppDecoration {
   );
 
   static BoxDecoration get fillCyanC => BoxDecoration(
-    color: appTheme.cyan9000c,
+    color: appTheme.cyan900,
   );
 }
 

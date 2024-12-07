@@ -5,7 +5,7 @@ part 'theme_event.dart';
 part 'theme_state.dart';
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
-  ThemeBloc(ThemeState initialState) : super(initialState);
+  ThemeBloc(ThemeState initialState, {required ThemeType}) : super(initialState);
 
   void _changeTheme(
     ThemeChangeEvent event,
