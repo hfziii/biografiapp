@@ -11,7 +11,7 @@ class ListdescriptionItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         CustomImageView(
           imagePath: ImageConstant.imgEdu,
@@ -21,7 +21,7 @@ class ListdescriptionItemWidget extends StatelessWidget {
         SizedBox(width: 18.h),
         Text(
           ListdescriptionItemModelObj.description!,
-          maxLines: 2,
+          maxLines: 3,
           overflow: TextOverflow.ellipsis,
           style: theme.textTheme.bodySmall,
         ),

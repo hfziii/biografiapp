@@ -38,116 +38,107 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: theme.colorScheme.secondaryContainer,
-        body: SizedBox(
-          width: double.maxFinite,
-          child: SingleChildScrollView(
-            child: Container(
-              height: 2132.h,
-              child: Stack(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              // Bagian Background dan Foto Profil
+              Stack(
                 alignment: Alignment.center,
                 children: [
+                  // Background Image
                   CustomImageView(
                     imagePath: ImageConstant.imgBackground,
                     height: 332.h,
-                    width: double.maxFinite,
-                    alignment: Alignment.topCenter,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
-                  SizedBox(
-                    width: double.maxFinite,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(
-                          height: 1328.h,
-                          width: double.maxFinite,
-                          child: Stack(
-                            alignment: Alignment.bottomCenter,
-                            children: [
-                              _buildMainContent(context),
-                              _buildProfileSection(context),
-                              CustomElevatedButton(
-                                width: 288.h,
-                                text: "lbl_name".tr,
-                                margin: EdgeInsets.only(top: 230.h),
-                                rightIcon: Container(
-                                  margin: EdgeInsets.only(left: 10.h),
-                                  child: CustomImageView(
-                                    imagePath: ImageConstant.imgEdit,
-                                    height: 28.h,
-                                    width: 28.h,
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
-                                alignment: Alignment.topCenter,
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [_buildAchievementsSection(context)],
-                              )
-                            ],
-                          ),
+                  // AppBar dengan imgBack dan imgMenu
+                  Positioned(
+                    top: 20.h,
+                    left: 16.h,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Tambahkan aksi kembali jika diperlukan
+                        Navigator.pop(context);
+                      },
+                      child: CustomImageView(
+                        imagePath: ImageConstant.imgBack,
+                        height: 24.h,
+                        width: 24.h,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 20.h,
+                    right: 16.h,
+                    child: GestureDetector(
+                      onTap: () {
+                        // Tambahkan aksi menu jika diperlukan
+                      },
+                      child: CustomImageView(
+                        imagePath: ImageConstant.imgMenu,
+                        height: 24.h,
+                        width: 24.h,
+                      ),
+                    ),
+                  ),
+                  // Foto Profil dan Nama
+                  Column(
+                    children: [
+                      SizedBox(height: 50.h), // Jarak dari atas
+                      // Foto Profil
+                      CustomImageView(
+                        imagePath: ImageConstant.imgPhoto,
+                        height: 150.h,
+                        width: 150.h,
+                        radius: BorderRadius.circular(75.h),
+                      ),
+                      SizedBox(height: 16.h),
+                      // Nama dan Tombol Edit
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.h),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 6,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 20.h),
-                        _buildCertificationSection(context)
-                      ],
-                    ),
-                  )
+                        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.h),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              "MUHAMAD HAFIZI",
+                              style: TextStyle(
+                                fontSize: 18.h,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF1947AA),
+                              ),
+                            ),
+                            SizedBox(width: 10.h),
+                            CustomImageView(
+                              imagePath: ImageConstant.imgEdit,
+                              height: 24.h,
+                              width: 24.h,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
-            ),
+              SizedBox(height: 20.h),
+              // Konten Lainnya
+              _buildProfileSection(context),
+              _buildAchievementsSection(context),
+              _buildCertificationSection(context),
+            ],
           ),
-        ),
-      ),
-    );
-  }
-
-  //Section Widget
-  Widget _buildMainContent(BuildContext context) {
-    return Align(
-      alignment: Alignment.topCenter,
-      child: Container(
-        width: double.maxFinite,
-        padding: EdgeInsets.symmetric(vertical: 24.h),
-        decoration: BoxDecoration(
-          color: appTheme.cyan900,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CustomAppBar(
-              leadingWidth: 20.h,
-              leading: AppbarLeadingImage(
-                imagePath: ImageConstant.imgBack,
-                margin: EdgeInsets.only(left: 16.h),
-              ),
-              actions: [
-                AppbarTraillingImage(
-                  imagePath: ImageConstant.imgMenu,
-                  height: 18.h,
-                  margin: EdgeInsets.only(right: 17.h),
-                )
-              ],
-            ),
-            SizedBox(height: 18.h),
-            Container(
-              width: double.maxFinite,
-              margin: EdgeInsets.symmetric(horizontal: 26.h),
-              child: Column(
-                children: [
-                  CustomImageView(
-                    imagePath: ImageConstant.imgPhoto,
-                    height: 150.h,
-                    width: 152.h,
-                    radius: BorderRadius.circular(
-                      74.h,
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(height: 658.h)
-          ],
         ),
       ),
     );
@@ -243,6 +234,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20.h),
+          
           SizedBox(
             width: double.maxFinite,
             child: Column(
@@ -282,7 +274,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       SizedBox(height: 4.h),
                       Padding(
-                        padding: EdgeInsets.only(right: 90.h),
+                        padding: EdgeInsets.only(right: 20.h),
                         child: BlocSelector<HomeBloc, HomeState, HomeModel?>(
                           selector: (state) => state.homeModelObj,
                           builder: (context, homeModelObj) {

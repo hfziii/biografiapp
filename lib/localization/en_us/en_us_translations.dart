@@ -38,7 +38,7 @@ final Map<String, String> enUs = {
   "msg_marketing_staff_pt":
       "Marketing Staff\nPT Surya Strategi Investama\nYear of 2021 - 2022",
   "msg_mathematics_natural":
-      "Mathematics & Natural Science \nSMAN 1 Cibungbulang\nYear of 2022 - Present",
+      "Mathematics & Natural Science - SMAN 1 Cibungbulang\nYear of 2022 - Present",
   "msg_middle_computer":
       "Middle Computer Operator◆Indonesian Professional Certification (BNSP)\nAugust 2022",
   "msg_gmail_com": "muhamad.hafizi372@gmail.com",
