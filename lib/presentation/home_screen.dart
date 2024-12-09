@@ -1,4 +1,3 @@
-// ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 import '../theme/custom_button_style.dart';
@@ -69,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                               _buildProfileSection(context),
                               CustomElevatedButton(
                                 width: 288.h,
-                                text: "lbl_muhamad_hafizi".tr,
+                                text: "lbl_name".tr,
                                 margin: EdgeInsets.only(top: 230.h),
                                 rightIcon: Container(
                                   margin: EdgeInsets.only(left: 10.h),
@@ -78,9 +77,9 @@ class HomeScreen extends StatelessWidget {
                                     height: 28.h,
                                     width: 28.h,
                                     fit: BoxFit.contain,
-                                    alignment: Alignment.topCenter,
                                   ),
                                 ),
+                                alignment: Alignment.topCenter,
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -90,10 +89,10 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 20.h),
-                        _buildCertificationsSection(context)
+                        _buildCertificationSection(context)
                       ],
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -103,7 +102,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget Profil
+  //Section Widget
   Widget _buildMainContent(BuildContext context) {
     return Align(
       alignment: Alignment.topCenter,
@@ -127,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                   imagePath: ImageConstant.imgMenu,
                   height: 18.h,
                   margin: EdgeInsets.only(right: 17.h),
-                ),
+                )
               ],
             ),
             SizedBox(height: 18.h),
@@ -138,29 +137,34 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   CustomImageView(
                     imagePath: ImageConstant.imgPhoto,
-                    height: 158.h,
+                    height: 150.h,
                     width: 152.h,
-                    radius: BorderRadius.circular(74.h),
-                  ),
+                    radius: BorderRadius.circular(
+                      74.h,
+                    ),
+                  )
                 ],
               ),
             ),
-            SizedBox(height: 658.h),
+            SizedBox(height: 658.h)
           ],
         ),
       ),
     );
   }
 
-  /// Section Widget Profile
+  //Section Widget
   Widget _buildProfileSection(BuildContext context) {
     return Container(
       width: double.maxFinite,
       margin: EdgeInsets.only(bottom: 136.h),
-      padding: EdgeInsets.symmetric(horizontal: 24.h, vertical: 42.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: 24.h,
+        vertical: 42.h,
+      ),
       decoration: BoxDecoration(
         color: theme.colorScheme.secondaryContainer,
-        borderRadius: BorderRadiusStyle.roundedBorder58,
+        borderRadius: BorderRadiusStyle.roundedBorder50,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -169,10 +173,13 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 8.h),
           Container(
             width: double.maxFinite,
-            padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 6.h),
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.h,
+              vertical: 6.h,
+            ),
             decoration: BoxDecoration(
               color: appTheme.blue300,
-              borderRadius: BorderRadiusStyle.roundedBorder18,
+              borderRadius: BorderRadiusStyle.roundedBorder10,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -184,16 +191,16 @@ class HomeScreen extends StatelessWidget {
                   child: _buildContactInfoEmail(
                     context,
                     lockThree: ImageConstant.imgContact,
-                    email: "lbl_085157181162".tr,
+                    email: "lbl_tlp".tr,
                   ),
                 ),
-                SizedBox(height: 18.h),
+                SizedBox(height: 10.h),
                 SizedBox(
                   width: double.maxFinite,
                   child: _buildContactInfoEmail(
                     context,
                     lockThree: ImageConstant.imgEmail,
-                    email: "msg_muhamad_hafizi372_gmail_com".tr,
+                    email: "msg_gmail_com".tr,
                   ),
                 ),
                 SizedBox(height: 16.h),
@@ -211,7 +218,7 @@ class HomeScreen extends StatelessWidget {
                   child: _buildContactInfoEmail(
                     context,
                     lockThree: ImageConstant.imgGithub,
-                    email: "msg_github_com_hfziii".tr,
+                    email: "msg_github".tr,
                   ),
                 ),
                 SizedBox(height: 14.h),
@@ -220,7 +227,7 @@ class HomeScreen extends StatelessWidget {
                   child: _buildContactInfoEmail(
                     context,
                     lockThree: ImageConstant.imgLinkedin,
-                    email: "msg_linkedin_con_in_muhamadhafizi".tr,
+                    email: "msg_linkedin_com_in_muhamadhafizi".tr,
                   ),
                 ),
                 SizedBox(height: 18.h),
@@ -232,66 +239,160 @@ class HomeScreen extends StatelessWidget {
                     email: "lbl_mhfzyyy".tr,
                   ),
                 ),
-                SizedBox(height: 20.h),
+              ],
+            ),
+          ),
+          SizedBox(height: 20.h),
+          SizedBox(
+            width: double.maxFinite,
+            child: Column(
+              children: [
                 SizedBox(
                   width: double.maxFinite,
-                  child: Column(
+                  child: Row(
                     children: [
-                      SizedBox(
-                        width: double.maxFinite,
-                        child: Row(
-                          children: [
-                            VerticalDivider(
-                              width: 4.h,
-                              thickness: 4.h,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 6.h),
-                              child: Text(
-                                "lbl_education".tr,
-                                style: theme.textTheme.bodyLarge,
-                              ),
-                            ),
-                          ],
-                        ),
+                      VerticalDivider(
+                        width: 4.h,
+                        thickness: 4.h,
                       ),
-                      SizedBox(height: 8.h),
-                      Container(
+                      Padding(
+                        padding: EdgeInsets.only(left: 6.h),
+                        child: Text(
+                          "lbl_education".tr,
+                          style: theme.textTheme.bodyLarge,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Container(
+                  width: double.maxFinite,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.h,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: appTheme.blue300,
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 4.h),
+                      Padding(
+                        padding: EdgeInsets.only(right: 90.h),
+                        child: BlocSelector<HomeBloc, HomeState, HomeModel?>(
+                          selector: (state) => state.homeModelObj,
+                          builder: (context, homeModelObj) {
+                            return ListView.separated(
+                              padding: EdgeInsets.zero,
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              separatorBuilder: (context, index) {
+                                return SizedBox(
+                                  height: 14.h,
+                                );
+                              },
+                              itemCount: homeModelObj
+                                      ?.listdescriptionItemList.length ??
+                                  0,
+                              itemBuilder: (context, index) {
+                                ListdescriptionItemModel model = homeModelObj
+                                        ?.listdescriptionItemList[index] ??
+                                    ListdescriptionItemModel();
+                                return ListdescriptionItemWidget(
+                                  model,
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20.h),
+          
+          SizedBox(
+            width: double.maxFinite,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: Row(
+                      children: [
+                        VerticalDivider(
+                          width: 4.h,
+                          thickness: 4.h,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 6.h),
+                          child: Text(
+                            "lbl_skill".tr,
+                            style: theme.textTheme.bodyLarge,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: Card(
+                      clipBehavior: Clip.antiAlias,
+                      elevation: 0,
+                      margin: EdgeInsets.zero,
+                      color: appTheme.blue300,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusStyle.roundedBorder10,
+                      ),
+                      child: Container(
                         width: double.maxFinite,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 18.h, vertical: 6.h),
+                        padding: EdgeInsets.symmetric(vertical: 16.h),
                         decoration: BoxDecoration(
                           color: appTheme.blue300,
-                          borderRadius: BorderRadiusStyle.roundedBorder18,
+                          borderRadius: BorderRadiusStyle.roundedBorder10,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 4.h),
-                            Padding(
-                              padding: EdgeInsets.only(right: 52.h),
-                              child:
-                                  BlocSelector<HomeBloc, HomeState, HomeModel?>(
+                            // Widget imgSkill
+                            CustomImageView(
+                              imagePath: ImageConstant.imgSkill,
+                              height: 58.h,
+                              width: 362.h,
+                              alignment: Alignment.center,
+                            ),
+                            SizedBox(height: 16.h), // Jarak antara imgSkill dan Container berikutnya
+
+                            // Container untuk listpriceItemList
+                            Container(
+                              margin: EdgeInsets.only(left: 35.h, right: 4.h),
+                              width: double.maxFinite,
+                              child: BlocSelector<HomeBloc, HomeState, HomeModel?>(
                                 selector: (state) => state.homeModelObj,
                                 builder: (context, homeModelObj) {
-                                  return ListView.separated(
-                                    padding: EdgeInsets.zero,
-                                    physics: NeverScrollableScrollPhysics(),
-                                    shrinkWrap: true,
-                                    separatorBuilder: (context, index) {
-                                      return SizedBox();
-                                    },
-                                    itemCount: homeModelObj
-                                            ?.listdescriptionItemList.length ??
-                                        0,
-                                    itemBuilder: (context, index) {
-                                      ListdescriptionItemModel model =
-                                          homeModelObj?.listdescriptionItemList[
-                                                  index] ??
-                                              ListdescriptionItemModel();
-                                      return ListdescriptionItemWidget(model);
-                                    },
+                                  return SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Wrap(
+                                      direction: Axis.horizontal,
+                                      spacing: 19.h,
+                                      children: List.generate(
+                                        homeModelObj?.listpriceItemList.length ?? 0,
+                                        (index) {
+                                          ListpriceItemModel model =
+                                              homeModelObj?.listpriceItemList[index] ??
+                                                  ListpriceItemModel();
+                                          return ListpriceItemWidget(model);
+                                        },
+                                      ),
+                                    ),
                                   );
                                 },
                               ),
@@ -299,118 +400,328 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                ),
-                SizedBox(height: 20.h),
+                ],
+              ),
+            ),
+          ),
+
+          SizedBox(height: 20.h),
+          SizedBox(
+            width: double.maxFinite,
+            child: Column(
+              children: [
                 SizedBox(
                   width: double.maxFinite,
-                  child: Column(
+                  child: Row(
                     children: [
-                      SizedBox(
-                        width: double.maxFinite,
-                        child: Row(
-                          children: [
-                            VerticalDivider(
-                              width: 4.h,
-                              thickness: 4.h,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 6.h),
-                              child: Text(
-                                "lbl_skill".tr,
-                                style: theme.textTheme.bodyLarge,
-                              ),
-                            ),
-                          ],
-                        ),
+                      VerticalDivider(
+                        width: 4.h,
+                        thickness: 4.h,
                       ),
-                      SizedBox(height: 8.h),
-                      SizedBox(
-                        width: double.maxFinite,
-                        child: Column(
-                          children: [
-                            BlocSelector<HomeBloc, HomeState, HomeModel?>(
-                              selector: (state) => state.homeModelObj,
-                              builder: (context, homeModelObj) {
-                                return ListView.separated(
-                                  padding: EdgeInsets.zero,
-                                  physics: NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  separatorBuilder: (context, index) {
-                                    return SizedBox();
-                                  },
-                                  itemCount: homeModelObj
-                                          ?.listgridOneItemList.length ??
-                                      0,
-                                  itemBuilder: (context, index) {
-                                    ListgridOneItemModel model = homeModelObj
-                                            ?.listgridOneItemList[index] ??
-                                        ListgridOneItemModel();
-                                    return ListgridOneItemWidget(model);
-                                  },
-                                );
-                              },
-                            ),
-                          ],
+                      Padding(
+                        padding: EdgeInsets.only(left: 6.h),
+                        child: Text(
+                          "lbl_work_experience".tr,
+                          style: theme.textTheme.bodyLarge,
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
+                SizedBox(height: 8.h),
+                Container(
+                  width: double.maxFinite,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.h,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: appTheme.blue300,
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 90.h),
+                        child: BlocSelector<HomeBloc, HomeState, HomeModel?>(
+                          selector: (state) => state.homeModelObj,
+                          builder: (context, homeModelObj) {
+                            return ListView.separated(
+                              padding: EdgeInsets.zero,
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              separatorBuilder: (context, index) {
+                                return SizedBox(
+                                  height: 8.h,
+                                );
+                              },
+                              itemCount:
+                                  homeModelObj?.listfrontendItemList.length ??
+                                      0,
+                              itemBuilder: (context, index) {
+                                ListfrontendItemModel model =
+                                    homeModelObj?.listfrontendItemList[index] ??
+                                        ListfrontendItemModel();
+                                return ListfrontendItemWidget(
+                                  model,
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
+          // SizedBox(height: 20.h),
+          // SizedBox(
+          //   height: 28.h,
+          //   width: 224.h,
+          // )
         ],
       ),
     );
   }
 
+  //Section Widget Org  
   Widget _buildAchievementsSection(BuildContext context) {
-    return BlocSelector<HomeBloc, HomeState, HomeModel?>(
-      selector: (state) => state.homeModelObj,
-      builder: (context, homeModelObj) {
-        return ListView.separated(
-          padding: EdgeInsets.zero,
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          separatorBuilder: (context, index) {
-            return SizedBox();
-          },
-          itemCount: homeModelObj?.listpriceItemList.length ?? 0,
-          itemBuilder: (context, index) {
-            ListpriceItemModel model =
-                homeModelObj?.listpriceItemList[index] ?? ListpriceItemModel();
-            return ListpriceItemWidget(model);
-          },
-        );
-      },
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 26.h),
+      width: double.maxFinite,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 6.h),
+            child: Text(
+              "lbl_org".tr, 
+              style: theme.textTheme.bodyLarge,
+            ),
+          ),
+          SizedBox(height: 8.h),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  width: double.maxFinite,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.h,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: appTheme.blue300,
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 74.h),
+                        child: BlocSelector<HomeBloc, HomeState, HomeModel?>(
+                          selector: (state) => state.homeModelObj,
+                          builder: (context, homeModelObj) {
+                            return ListView.separated(
+                              padding: EdgeInsets.zero,
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              separatorBuilder: (context, index) {
+                                return SizedBox(
+                                  height: 8.h,
+                                );
+                              },
+                              itemCount:
+                                  homeModelObj?.listgridOneItemList.length ?? 0,
+                              itemBuilder: (context, index) {
+                                ListgridOneItemModel model =
+                                    homeModelObj?.listgridOneItemList[index] ??
+                                        ListgridOneItemModel();
+                                return ListgridOneItemWidget(
+                                  model,
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 
-  Widget _buildCertificationsSection(BuildContext context) {
-    return BlocSelector<HomeBloc, HomeState, HomeModel?>(
-      selector: (state) => state.homeModelObj,
-      builder: (context, homeModelObj) {
-        return ListView.separated(
-          padding: EdgeInsets.zero,
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          separatorBuilder: (context, index) {
-            return SizedBox();
-          },
-          itemCount: homeModelObj?.listfrontendItemList.length ?? 0,
-          itemBuilder: (context, index) {
-            ListfrontendItemModel model =
-                homeModelObj?.listfrontendItemList[index] ??
-                    ListfrontendItemModel();
-            return ListfrontendItemWidget(model);
-          },
-        );
-      },
+  //Section Widget Certif
+  Widget _buildCertificationSection(BuildContext context) {
+    return Container(
+      width: double.maxFinite,
+      margin: EdgeInsets.symmetric(horizontal: 26.h),
+      child: Column(
+        children: [
+          SizedBox(
+            width: double.maxFinite,
+            child: Column(
+              children: [
+                SizedBox(
+                  width: double.maxFinite,
+                  child: Row(
+                    children: [
+                      VerticalDivider(
+                        width: 4.h,
+                        thickness: 4.h,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 6.h),
+                        child: Text(
+                          "lbl_certification".tr,
+                          style: theme.textTheme.bodyLarge,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Container(
+                  width: double.maxFinite,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.h,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: appTheme.blue300,
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 12.h),
+                        child: BlocSelector<HomeBloc, HomeState, HomeModel?>(
+                          selector: (state) => state.homeModelObj,
+                          builder: (context, homeModelObj) {
+                            return ListView.separated(
+                              padding: EdgeInsets.zero,
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              separatorBuilder: (context, index) {
+                                return SizedBox(
+                                  height: 8.h,
+                                );
+                              },
+                              itemCount:
+                                  homeModelObj?.listdigitalItemList.length ?? 0,
+                              itemBuilder: (context, index) {
+                                ListdigitalItemModel model =
+                                    homeModelObj?.listdigitalItemList[index] ??
+                                        ListdigitalItemModel();
+                                return ListdigitalItemWidget(
+                                  model,
+                                );
+                              },
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20.h),
+          SizedBox(
+            width: double.maxFinite,
+            child: Column(
+              children: [
+                SizedBox(
+                  width: double.maxFinite,
+                  child: Row(
+                    children: [
+                      VerticalDivider(
+                        width: 4.h,
+                        thickness: 4.h,
+                      ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 6.h),
+                          child: Text(
+                            "lbl_portfolio".tr,
+                            style: theme.textTheme.bodyLarge,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 12.h),
+                Container(
+                  width: double.maxFinite,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 32.h,
+                    vertical: 10.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: appTheme.blue300,
+                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "msg_website_cipaku_smart".tr,
+                        style: theme.textTheme.bodySmall,
+                      ),
+                      SizedBox(height: 6.h),
+                      CustomImageView(
+                        imagePath: ImageConstant.imgPorto1,
+                        height: 184.h,
+                        width: double.maxFinite,
+                        radius: BorderRadius.circular(
+                          10.h,
+                        ),
+                        margin: EdgeInsets.only(right: 6.h),
+                      ),
+                      SizedBox(height: 4.h),
+                      Text(
+                        "msg_website_halalin".tr,
+                        style: theme.textTheme.bodySmall,
+                      ),
+                      SizedBox(height: 2.h),
+                      CustomImageView(
+                        imagePath: ImageConstant.imgPorto2,
+                        height: 184.h,
+                        width: double.maxFinite,
+                        radius: BorderRadius.circular(
+                          10.h,
+                        ),
+                        margin: EdgeInsets.only(right: 6.h),
+                      ),
+                      SizedBox(height: 6.h)
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 
+  //Common Widget
   Widget _buildContactInfoEmail(
     BuildContext context, {
     required String lockThree,

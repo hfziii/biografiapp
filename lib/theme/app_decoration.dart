@@ -19,9 +19,9 @@ class AppDecoration {
 
 class BorderRadiusStyle {
   // Rounded borders
-  static BorderRadius get roundedBorder18 => BorderRadius.circular(10.h);
+  static BorderRadius get roundedBorder10 => BorderRadius.circular(10.h);
 
-  static BorderRadius get roundedBorder58 => BorderRadius.circular(50.h);
+  static BorderRadius get roundedBorder50 => BorderRadius.circular(50.h);
 
   static BorderRadius get roundedBorder74 => BorderRadius.circular(74.h);
 }

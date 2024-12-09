@@ -4,8 +4,7 @@ import '../models/listdescription_item_model.dart';
 
 // ignore_for_file: must_be_immutable
 class ListdescriptionItemWidget extends StatelessWidget {
-  ListdescriptionItemWidget(this.ListdescriptionItemModelObj, {Key? key})
-      : super(key: key);
+  ListdescriptionItemWidget(this.ListdescriptionItemModelObj, {Key? key}) : super(key: key);
 
   ListdescriptionItemModel ListdescriptionItemModelObj;
 

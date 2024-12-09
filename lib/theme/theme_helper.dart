@@ -60,7 +60,7 @@ class ThemeHelper {
 class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
         bodyLarge: TextStyle(
-          color: colorScheme.primary,
+          color: Color(0xFF046BA5),
           fontSize: 18.0,
           fontFamily: 'Rowdies',
           fontWeight: FontWeight.w400,

@@ -16,6 +16,8 @@ class ImageConstant {
   static String imgIg = '$imagePath/mdi_instagram.svg';
   static String imgEdu = '$imagePath/edu-icon.svg';
   static String imgSkill = '$imagePath/skill-icon.png';
+  static String imgSkill1 = '$imagePath/skill1.png';
+  static String imgSkill2 = '$imagePath/skill2.png';
   static String imgWork = '$imagePath/work-icon.svg';
   static String imgOrg = '$imagePath/org-icon.svg';
   static String imgCertif = '$imagePath/certif-icon.svg';
